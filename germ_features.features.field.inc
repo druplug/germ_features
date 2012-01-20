@@ -78,7 +78,7 @@ function germ_features_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '31',
+        'weight' => '3',
       ),
     ),
   );
@@ -150,7 +150,58 @@ function germ_features_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '34',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-issue-field_id'
+  $fields['node-issue-field_id'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_id',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'module' => 'serial',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'serial',
+    ),
+    'field_instance' => array(
+      'bundle' => 'issue',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'serial',
+          'settings' => array(),
+          'type' => 'serial_formatter_default',
+          'weight' => 6,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_id',
+      'label' => 'id',
+      'required' => FALSE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'serial',
+        'settings' => array(),
+        'type' => 'serial',
+        'weight' => '0',
       ),
     ),
   );
@@ -224,7 +275,7 @@ function germ_features_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '32',
+        'weight' => '4',
       ),
     ),
   );
@@ -298,7 +349,7 @@ function germ_features_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '33',
+        'weight' => '5',
       ),
     ),
   );
@@ -371,7 +422,7 @@ function germ_features_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '35',
+        'weight' => '7',
       ),
     ),
   );
@@ -441,7 +492,7 @@ function germ_features_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '36',
+        'weight' => '8',
       ),
     ),
   );
@@ -609,6 +660,7 @@ function germ_features_field_default_fields() {
   t('Start Date');
   t('Tags');
   t('Type');
+  t('id');
 
   return $fields;
 }
