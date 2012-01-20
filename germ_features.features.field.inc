@@ -49,7 +49,7 @@ function germ_features_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -78,7 +78,7 @@ function germ_features_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '3',
+        'weight' => '8',
       ),
     ),
   );
@@ -123,7 +123,7 @@ function germ_features_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => 3,
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -150,7 +150,7 @@ function germ_features_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '6',
+        'weight' => '9',
       ),
     ),
   );
@@ -178,10 +178,9 @@ function germ_features_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'serial',
           'settings' => array(),
-          'type' => 'serial_formatter_default',
-          'weight' => 6,
+          'type' => 'hidden',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -254,7 +253,7 @@ function germ_features_field_default_fields() {
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -275,7 +274,7 @@ function germ_features_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -328,7 +327,7 @@ function germ_features_field_default_fields() {
           'module' => 'node_reference',
           'settings' => array(),
           'type' => 'node_reference_default',
-          'weight' => 2,
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -340,7 +339,7 @@ function germ_features_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_roadmap',
       'label' => 'Roadmap',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -349,7 +348,7 @@ function germ_features_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '5',
+        'weight' => '6',
       ),
     ),
   );
@@ -398,7 +397,7 @@ function germ_features_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 4,
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -423,6 +422,74 @@ function germ_features_field_default_fields() {
         ),
         'type' => 'taxonomy_autocomplete',
         'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-issue-field_title'
+  $fields['node-issue-field_title'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_title',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'issue',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 7,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_title',
+      'label' => 'Title',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '2',
       ),
     ),
   );
@@ -471,7 +538,7 @@ function germ_features_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 5,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -492,7 +559,7 @@ function germ_features_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '8',
+        'weight' => '4',
       ),
     ),
   );
@@ -659,6 +726,7 @@ function germ_features_field_default_fields() {
   t('Roadmap');
   t('Start Date');
   t('Tags');
+  t('Title');
   t('Type');
   t('id');
 
