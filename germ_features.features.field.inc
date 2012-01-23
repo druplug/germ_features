@@ -200,7 +200,7 @@ function germ_features_field_default_fields() {
         'module' => 'serial',
         'settings' => array(),
         'type' => 'serial',
-        'weight' => '0',
+        'weight' => '1',
       ),
     ),
   );
@@ -349,6 +349,80 @@ function germ_features_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-issue-field_status'
+  $fields['node-issue-field_status'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_status',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'status',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'issue',
+      'default_value' => array(
+        0 => array(
+          'tid' => '4',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 8,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_status',
+      'label' => 'Status',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '4',
       ),
     ),
   );
@@ -559,7 +633,7 @@ function germ_features_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '4',
+        'weight' => '3',
       ),
     ),
   );
@@ -725,6 +799,7 @@ function germ_features_field_default_fields() {
   t('Project');
   t('Roadmap');
   t('Start Date');
+  t('Status');
   t('Tags');
   t('Title');
   t('Type');
