@@ -132,8 +132,8 @@ function germ_features_field_default_fields() {
       'label' => 'Actual Time',
       'required' => 0,
       'settings' => array(
-        'max' => '',
-        'min' => '1',
+        'max' => '12',
+        'min' => '0.25',
         'prefix' => '',
         'suffix' => 'hours',
         'user_register_form' => FALSE,
@@ -349,10 +349,10 @@ function germ_features_field_default_fields() {
       'label' => 'Estimated Time',
       'required' => 0,
       'settings' => array(
-        'max' => '',
-        'min' => '1',
+        'max' => '8',
+        'min' => '0.25',
         'prefix' => '',
-        'suffix' => 'hours',
+        'suffix' => ' hours',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -786,6 +786,84 @@ function germ_features_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-issue-field_subtasks'
+  $fields['node-issue-field_subtasks'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_subtasks',
+      'foreign keys' => array(
+        'nid' => array(
+          'columns' => array(
+            'nid' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'nid' => array(
+          0 => 'nid',
+        ),
+      ),
+      'module' => 'node_reference',
+      'settings' => array(
+        'referenceable_types' => array(
+          'issue' => 'issue',
+          'project' => 0,
+          'roadmap' => 0,
+        ),
+        'view' => array(
+          'args' => array(),
+          'display_name' => '',
+          'view_name' => '',
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'node_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'issue',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Add any subtasks or  tasks on which this issue is dependent on.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'node_reference',
+          'settings' => array(),
+          'type' => 'node_reference_default',
+          'weight' => 16,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_subtasks',
+      'label' => 'Sub-tasks',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'node_reference',
+        'settings' => array(
+          'autocomplete_match' => 'contains',
+          'autocomplete_path' => 'node_reference/autocomplete',
+          'size' => 60,
+        ),
+        'type' => 'node_reference_autocomplete',
+        'weight' => '32',
       ),
     ),
   );
@@ -1231,6 +1309,7 @@ function germ_features_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Actual Time');
+  t('Add any subtasks or  tasks on which this issue is dependent on.');
   t('Assign To');
   t('Attachments');
   t('Body');
@@ -1242,6 +1321,7 @@ function germ_features_field_default_fields() {
   t('Screenshots');
   t('Start Date');
   t('Status');
+  t('Sub-tasks');
   t('Tags');
   t('Title');
   t('Type');

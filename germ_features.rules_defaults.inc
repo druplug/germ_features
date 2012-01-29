@@ -13,7 +13,7 @@ function germ_features_default_rules_configuration() {
       "LABEL" : "issue atomatic title",
       "PLUGIN" : "reaction rule",
       "REQUIRES" : [ "rules", "php" ],
-      "ON" : [ "node_insert", "node_update" ],
+      "ON" : [ "node_insert" ],
       "IF" : [
         { "node_is_of_type" : { "node" : [ "node" ], "type" : { "value" : { "issue" : "issue" } } } }
       ],
