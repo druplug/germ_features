@@ -63,7 +63,7 @@ function germ_features_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'body',
-      'label' => 'Body',
+      'label' => 'Description',
       'required' => 0,
       'settings' => array(
         'display_summary' => 0,
@@ -1312,7 +1312,6 @@ function germ_features_field_default_fields() {
   t('Add any subtasks or  tasks on which this issue is dependent on.');
   t('Assign To');
   t('Attachments');
-  t('Body');
   t('Description');
   t('Estimated Time');
   t('Priority');
